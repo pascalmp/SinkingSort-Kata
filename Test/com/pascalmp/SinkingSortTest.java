@@ -10,5 +10,10 @@ public class SinkingSortTest {
 	public void shouldSortSortedArrayList() {
 		assertArrayEquals(new int[] {0, 1}, SinkingSort.sortArrayList(new int[] {0, 1}));
 	}
+	
+	@Test
+	public void shouldSortUnsortedArrayListOfLengthTwo(){
+		assertArrayEquals(new int[] {0,  1}, SinkingSort.sortArrayList(new int[] {1, 0}));
+	}
 
 }
