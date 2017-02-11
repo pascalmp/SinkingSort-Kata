@@ -15,5 +15,10 @@ public class SinkingSortTest {
 	public void shouldSortUnsortedArrayListOfLengthTwo(){
 		assertArrayEquals(new int[] {0,  1}, SinkingSort.sortArrayList(new int[] {1, 0}));
 	}
+	
+	@Test
+	public void shouldSortPartiallySortedArrayListofLentgthThree(){
+		assertArrayEquals(new int[] {0,  1, 2}, SinkingSort.sortArrayList(new int[] {0, 2, 1}));
+	}
 
 }
