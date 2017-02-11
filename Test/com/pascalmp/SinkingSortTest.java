@@ -8,22 +8,29 @@ public class SinkingSortTest {
 
 	@Test
 	public void shouldSortSortedArrayList() {
-		assertArrayEquals(new int[] {0, 1}, SinkingSort.sortArrayList(new int[] {0, 1}));
+		checkIfSinkingSortedArrayReturnsExpected(new int[] {0, 1}, SinkingSort.sortArrayList(new int[] {0, 1}));
 	}
 	
 	@Test
-	public void shouldSortUnsortedArrayListOfLengthTwo(){
-		assertArrayEquals(new int[] {0,  1}, SinkingSort.sortArrayList(new int[] {1, 0}));
+	public void shouldSortUnsortedArrayListOfLengthTwo() throws Exception{
+		checkIfSinkingSortedArrayReturnsExpected(new int[] {0,  1}, SinkingSort.sortArrayList(new int[] {1, 0}));
 	}
 	
 	@Test
-	public void shouldSortPartiallySortedArrayListofLentgthThree(){
-		assertArrayEquals(new int[] {0,  1, 2}, SinkingSort.sortArrayList(new int[] {0, 2, 1}));
+	public void shouldSortPartiallySortedArrayListofLentgthThree() throws Exception{
+		checkIfSinkingSortedArrayReturnsExpected(new int[] {0,  1, 2}, (new int[] {0, 2, 1}));
 	}
 	
 	@Test
-	public void shouldSortUnsortedArrayListOfLengthThree(){
-		assertArrayEquals(new int[] {0,  1, 2}, SinkingSort.sortArrayList(new int[] {2, 1, 0}));
+	public void shouldSortUnsortedArrayListOfLengthThree() throws Exception{
+		checkIfSinkingSortedArrayReturnsExpected(new int[] {0,  1, 2}, (new int[] {2, 1, 0}));
+	}
+
+	
+	//Extracted method and Introduced parameter, to reduce the duplications in the test code
+	
+	private void checkIfSinkingSortedArrayReturnsExpected(int[] expectedReturn, int[] inputArray) {
+		assertArrayEquals(expectedReturn, SinkingSort.sortArrayList(inputArray));
 	}
 
 }
