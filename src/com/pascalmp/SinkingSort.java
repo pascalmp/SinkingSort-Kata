@@ -2,9 +2,9 @@ package com.pascalmp;
 
 public class SinkingSort {
 
-	public static int[] sortArrayList(int[] is) {
+	public static int[] sortArrayList(int[] array) {
 		// TODO Auto-generated method stub
-		return is;
+		return array;
 	}
 
 }
